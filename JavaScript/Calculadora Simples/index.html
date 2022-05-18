@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha primeira calculadora</title>
+
+    <style>
+        .corpo {
+            border: 3px solid black;
+            text-align: center;
+            min-width: 180px;
+            max-width: 300px;
+            align-items: center;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 20px;
+            background-color: #EDDCFF;
+            }
+
+       .botoes {
+           display: grid;
+           grid-template-columns: 85px 85px;
+           grid-template-rows: 45px 45px;
+           justify-content: center;
+           gap: 10px;
+           font-size: 50px;                      
+        }
+
+        .botao {
+            font-size: 30px;
+        }
+
+        span {
+            text-decoration: underline;
+            color: red;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="corpo">
+    <h1>Minha Calculadora</h1>
+    <!--Inputs dos números-->
+    <input id="number1" type="number" placeholder="Primeiro número"> <br /><br />
+    <input id="number2" type="number" placeholder="Segundo número"> <br /><br />
+    <!---------------------->
+
+    <!--Botões das operações-->
+    <div class="botoes">
+        <button class="botao" onclick="somar()">+</button>
+        <button class="botao" onclick="subtrair()">-</button>
+        <button class="botao" onclick="multiplicar()">x</button>
+        <button class="botao" onclick="dividir()">÷</button>
+    </div>
+    <!------------------------>
+
+    <!--Resultado-->
+    <h3>O resultado dessa operação é: <span class="resultado"></span>  
+    <!------------->    
+        
+    
+    <script>
+        //Transformando os inputs em variáveis//
+        let number1 = document.querySelector("#number1");
+        let number2 = document.querySelector("#number2");
+        let resultado = document.querySelector(".resultado");
+        //------------------------------------//
+
+        //Funções para fazer os botões funcionarem//
+        function somar() {
+            resultado.innerHTML = parseInt(number1.value) + parseInt(number2.value)
+        }
+
+        function subtrair() {
+            resultado.innerHTML = parseInt(number1.value) - parseInt(number2.value)
+        }
+
+        function multiplicar() {
+            resultado.innerHTML = parseInt(number1.value) * parseInt(number2.value)
+        }
+
+        function dividir() {
+            resultado.innerHTML = parseInt(number1.value) / parseInt(number2.value)
+        }
+        //---------------------------------------//
+    </script>
+    </div>
+</body>
+</html>
